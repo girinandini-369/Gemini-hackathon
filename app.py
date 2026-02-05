@@ -2,6 +2,18 @@ import streamlit as st
 import requests
 import time
 import pandas as pd
+import os
+
+# ---------------------------
+# Get Gemini API key
+# ---------------------------
+gemini_key = os.getenv("AIzaSyB23xK3uGeCJ_Fv3DuvW5QKHhA0_oTSPDs")  # for Streamlit Cloud
+if gemini_key is None:
+    try:
+        with open("key.txt") as f:
+            gemini_key = f.read().strip()  # fallback for local testing
+    except FileNotFoundError:
+        gemini_key = None
 
 # ---------------------------
 # Mock Gemini AI function
