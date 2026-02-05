@@ -7,19 +7,12 @@ import os
 # ---------------------------
 # Get Gemini API key
 # ---------------------------
-gemini_key = os.getenv("AIzaSyB23xK3uGeCJ_Fv3DuvW5QKHhA0_oTSPDs")  # for Streamlit Cloud
-if gemini_key is None:
-    try:
-        with open("key.txt") as f:
-            gemini_key = f.read().strip()  # fallback for local testing
-    except FileNotFoundError:
-        gemini_key = None
+gemini_key = os.getenv("AIzaSyB23xK3uGeCJ_Fv3DuvW5QKHhA0_oTSPDs")  # use Streamlit Cloud secrets
 
 # ---------------------------
 # Mock Gemini AI function
 # ---------------------------
 def mock_gemini_analysis(logs):
-    # Simple sample analysis for demo/hackathon
     issues = []
     for log in logs:
         if log["Status"] != "✅ Success":
