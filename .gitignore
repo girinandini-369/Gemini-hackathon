@@ -1,0 +1,9 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore secret API key
+key.txt
+
+# VS Code settings
+.vscode/
